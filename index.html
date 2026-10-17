@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LexAdvocate & Associates | Bukhari Law Chambers - Senior Advocates & Legal Consultants</title>
+  <meta name="description" content="Prestigious legal counsel and advocacy at Supreme Court & High Courts. Specializing in Corporate, Criminal Defense, Property Litigation, Civil Writs, and Family Law.">
+  <meta name="keywords" content="Lawyer, Advocate, Supreme Court Advocate, High Court Advocate, Corporate Law, Criminal Bail, Property Dispute, Legal Consultant, LexAdvocate, Bukhari Law Associates">
+  
+  <!-- Favicon Scales of Justice SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a059' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='M7 21h10'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'/%3E%3C/svg%3E">
+
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Supabase CDN (v2) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- ==============================================================================
+       TOP JURISDICTIONAL NOTIFICATION BAR
+       ============================================================================== -->
+  <aside class="top-bar" aria-label="Chamber Information">
+    <div class="container">
+      <div class="top-bar-content">
+        <div class="top-bar-left">
+          <div class="top-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Supreme Court & High Court Enrolled Advocates</span>
+          </div>
+          <div class="top-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span class="dyn-hours-weekdays">Mon – Fri: 09:00 AM – 08:00 PM</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <div class="top-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Emergency Bail: <strong style="color: #ffffff;"><a href="tel:923337972445" class="dyn-emergency">+92 333 7972445</a></strong></span>
+          </div>
+          <a href="admin.html" class="top-admin-link" title="Advocate & Senior Partners Portal">
+            <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Advocate Portal
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==============================================================================
+       HEADER & NAVIGATION
+       ============================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <!-- Firm Brand Emblem & Name -->
+      <a href="#home" class="brand-logo">
+        <div class="logo-emblem" aria-hidden="true">
+          <!-- Scales of Justice SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+            <path d="M7 21h10"/>
+            <path d="M12 3v18"/>
+            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title dyn-firm-name">LexAdvocate & Associates</span>
+          <span class="logo-subtitle dyn-firm-subtitle">Bukhari Law Chambers & Legal Consultants</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About Chambers</a>
+        <a href="#practices" class="nav-link">Practice Areas</a>
+        <a href="#partners" class="nav-link">Senior Advocates</a>
+        <a href="#results" class="nav-link">Case Track Record</a>
+        <a href="#testimonials" class="nav-link">Client Reviews</a>
+        <a href="#faqs" class="nav-link">Legal FAQs</a>
+        <a href="#contact" class="nav-link">Chambers Contact</a>
+      </nav>
+
+      <!-- Quick Action Buttons -->
+      <div class="nav-actions">
+        <!-- Direct Call -->
+        <a href="tel:923337972445" class="btn-contact-quick dyn-phone" title="Call Chambers Directly" aria-label="Call Chambers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <!-- Direct WhatsApp -->
+        <a href="#" target="_blank" class="btn-contact-quick dyn-wa-link" title="Instant WhatsApp Counsel" aria-label="WhatsApp Counsel">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
+          </svg>
+        </a>
+        <!-- Book Consultation CTA -->
+        <a href="#booking" class="btn btn-gold btn-sm">
+          <span>Book Consultation</span>
+        </a>
+        <!-- Mobile Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==============================================================================
+         HERO SECTION
+         ============================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-bg-overlay"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Content -->
+          <div class="hero-content">
+            <div class="hero-pre-badge">
+              <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>Estd. 2004 • Premier Legal Chambers</span>
+            </div>
+
+            <h1 class="hero-headline">
+              Defending Your Rights with <span class="text-gradient-gold">Integrity</span>, Precision & Proven Legal Excellence.
+            </h1>
+
+            <p class="hero-description">
+              Led by seasoned Supreme Court and High Court Advocates. We provide relentless courtroom defense, sophisticated corporate transactions, and decisive dispute resolution across all jurisdictions.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#booking" class="btn btn-gold btn-lg">
+                <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>Book Free Case Evaluation</span>
+              </a>
+              <a href="#practices" class="btn btn-outline-gold btn-lg">
+                <span>Explore Practice Areas</span>
+                <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+
+            <!-- Credibility Trust Badges -->
+            <div class="hero-trust-row">
+              <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Supreme Court Bar</span>
+              </div>
+              <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                <span>100% Attorney-Client Privilege</span>
+              </div>
+              <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                <span>Zero Build • Static Hostable</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Senior Advocate Prestige Showcase Card -->
+          <div class="hero-prestige-card">
+            <div class="prestige-header">
+              <div class="avatar-portrait">
+                <img src="images/advocate-imran-ib-abro.jpg" alt="Advocate Imran IB Abro" class="avatar-portrait-img">
+              </div>
+              <div>
+                <h3 class="prestige-lead-title">Advocate Imran IB Abro</h3>
+                <p class="prestige-lead-role">Senior Advocate High Court & Founder</p>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.35rem; font-size: 0.82rem;">
+                  <a href="tel:923337972445" style="color: var(--gold-light); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
+                    <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>0333 7972445</span>
+                  </a>
+                  <span style="color: #64748b;">•</span>
+                  <a href="https://wa.me/923337972445?text=Hello%20Advocate%20Imran%20IB%20Abro,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter." target="_blank" style="color: #34d399; font-weight: 700; display: inline-flex; align-items: center; gap: 0.25rem;">
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="prestige-pills">
+              <div class="prestige-pill-item">
+                <div class="pill-icon">
+                  <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="pill-text">
+                  <h5>Apex Courtroom Representation</h5>
+                  <p>Over 20+ years precedent-setting advocacy in constitutional writs and commercial appeals.</p>
+                </div>
+              </div>
+
+              <div class="prestige-pill-item">
+                <div class="pill-icon">
+                  <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                </div>
+                <div class="pill-text">
+                  <h5>Corporate & Commercial Strategy</h5>
+                  <p>Advising multinationals, banks, and major institutions on cross-border litigation and mergers.</p>
+                </div>
+              </div>
+
+              <div class="prestige-pill-item">
+                <div class="pill-icon">
+                  <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="pill-text">
+                  <h5>High Court Stay & Bail Within 24h</h5>
+                  <p>Rapid emergency intervention teams mobilized for imminent wrongful custody or dispossession.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chambers Status -->
+            <div class="chambers-status-badge">
+              <span style="display: flex; align-items: center; gap: 0.6rem;">
+                <span class="pulse-indicator"></span>
+                <span>Chambers Open & Accepting Cases</span>
+              </span>
+              <a href="#booking" style="color: var(--gold-light); text-decoration: underline; font-size: 0.82rem;">Reserve Slot →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         KEY STATS STRIP
+         ============================================================================== -->
+    <section class="stats-strip" aria-label="Firm Statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="stat-exp">20+</div>
+            <div class="stat-label">Years Court Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="stat-rate">98.4%</div>
+            <div class="stat-label">Case Success Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="stat-cases">5,200+</div>
+            <div class="stat-label">Client Consultations</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Privileged & Confidential</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         ABOUT CHAMBERS SECTION
+         ============================================================================== -->
+    <section class="section section-darker" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Legal Heritage & Distinction</span>
+          </div>
+          <h2 class="section-title">An Authoritative Chamber Built on Unyielding Legal Precision</h2>
+          <p class="section-desc">
+            Founded with a solemn commitment to judicial truth and client advocacy, LexAdvocate & Associates (Bukhari Law Chambers) has grown into one of the country's most respected legal institutions, representing individuals, corporations, and statutory entities across every appellate forum.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--gold-border); padding: 2.2rem; border-radius: var(--radius-lg);">
+            <div style="color: var(--gold-light); margin-bottom: 1.25rem;">
+              <svg style="width: 38px; height: 38px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem;">Supreme & High Court Standing</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7;">
+              Enrolled with highest rights of audience before the Supreme Court of Pakistan and provincial High Courts, handling complex constitutional interpretations and judicial reviews.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--gold-border); padding: 2.2rem; border-radius: var(--radius-lg);">
+            <div style="color: var(--gold-light); margin-bottom: 1.25rem;">
+              <svg style="width: 38px; height: 38px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem;">Strategic Commercial Mastery</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7;">
+              Advising Fortune 500 multinationals, domestic conglomerates, and financial institutions on contract law, regulatory frameworks, tax disputes, and bilateral investment treaties.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--gold-border); padding: 2.2rem; border-radius: var(--radius-lg);">
+            <div style="color: var(--gold-light); margin-bottom: 1.25rem;">
+              <svg style="width: 38px; height: 38px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem;">Rapid Crisis Court Intervention</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7;">
+              Emergency round-the-clock defense counsel available for critical court matters, illegal detention, anticipatory pre-arrest bail, and urgent commercial injunctions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         PRACTICE AREAS GRID (8 Interactive Cards with Gold Hover Glow)
+         ============================================================================== -->
+    <section class="section" id="practices">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            <span>Areas of Specialized Jurisprudence</span>
+          </div>
+          <h2 class="section-title">Comprehensive Legal Disciplines</h2>
+          <p class="section-desc">
+            Explore our specialized practice groups. Click any practice area to examine our full scope of services, statutory references, and courtroom capabilities.
+          </p>
+        </div>
+
+        <!-- Dynamic Practice Areas Grid -->
+        <div class="practice-grid" id="practiceAreasGrid">
+          <!-- Populated by main.js with 8 luxury cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         INTERACTIVE CONSULTATION BOOKING SECTION (Connected to Supabase)
+         ============================================================================== -->
+    <section class="section section-darker booking-section" id="booking">
+      <div class="container">
+        <div class="booking-wrapper">
+          <!-- Left Info Pane -->
+          <div class="booking-info-pane">
+            <div>
+              <div class="section-tag" style="margin-bottom: 1.25rem;">
+                <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>Direct Chamber Access</span>
+              </div>
+              <h2 class="booking-info-title">Schedule a Legal Consultation</h2>
+              <p class="booking-info-desc">
+                Receive confidential legal counsel from our Senior Advocates. All consultations are protected by strict statutory Attorney-Client Privilege.
+              </p>
+
+              <!-- Confidential Guarantee -->
+              <div class="confidential-guarantee-box">
+                <div class="confidential-header">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>100% Confidentiality Guarantee</span>
+                </div>
+                <p class="confidential-text">
+                  Your identity, documents, and case facts are never shared with any third party. Your consultation data is encrypted in compliance with international privacy protocols.
+                </p>
+              </div>
+            </div>
+
+            <!-- Urgent Phone Call Box -->
+            <div class="direct-call-badge">
+              <div class="call-icon-circle">
+                <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="call-meta">
+                <p>Urgent Court Inquiries</p>
+                <a href="tel:923001234567" class="dyn-phone">+92 300 1234567</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Interactive Form Pane -->
+          <div class="booking-form-pane">
+            <h3 class="form-pane-title">Case Evaluation & Booking</h3>
+            <p class="form-pane-sub">Fill out the brief below to secure your consultation slot with senior partners.</p>
+
+            <form class="booking-form" id="consultationForm">
+              <!-- Client Name & Phone -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="full_name">
+                    Full Name / Enterprise Name <span class="required-star">*</span>
+                  </label>
+                  <input type="text" id="full_name" name="full_name" class="form-control" placeholder="e.g. Adv. M. Khalid / Apex Group" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="phone">
+                    Phone / WhatsApp Number <span class="required-star">*</span>
+                  </label>
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +92 300 1234567" required>
+                </div>
+              </div>
+
+              <!-- Email & Practice Area -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address (Optional)</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="client@example.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="practice_area">
+                    Practice Area <span class="required-star">*</span>
+                  </label>
+                  <select id="practice_area" name="practice_area" class="form-control" required>
+                    <option value="" disabled selected>Select Legal Discipline</option>
+                    <option value="Corporate & Commercial Law">Corporate & Commercial Law</option>
+                    <option value="Criminal Defense & Bail Matters">Criminal Defense & Bail Matters</option>
+                    <option value="Family & Matrimonial Law">Family & Matrimonial Law (Divorce, Custody)</option>
+                    <option value="Property & Real Estate Litigation">Property & Real Estate Litigation</option>
+                    <option value="Civil Litigation & Constitutional Writs">Civil Litigation & Constitutional Writs</option>
+                    <option value="Labor & Employment Law">Labor & Employment Law</option>
+                    <option value="Cyber Crime & Digital Law">Cyber Crime & Digital Law</option>
+                    <option value="Banking, Tax & Financial Disputes">Banking, Tax & Financial Disputes</option>
+                    <option value="Other High Court Legal Matter">Other High Court Legal Matter</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Preferred Date & Slot -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="preferred_date">Preferred Date</label>
+                  <input type="date" id="preferred_date" name="preferred_date" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="preferred_time">Preferred Time Window</label>
+                  <select id="preferred_time" name="preferred_time" class="form-control">
+                    <option value="Morning (10:00 AM - 01:00 PM)">Morning (10:00 AM - 01:00 PM)</option>
+                    <option value="Afternoon (02:00 PM - 05:00 PM)">Afternoon (02:00 PM - 05:00 PM)</option>
+                    <option value="Evening (05:00 PM - 08:00 PM)">Evening (05:00 PM - 08:00 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Consultation Mode (Radio Chips) -->
+              <div class="form-group">
+                <label class="form-label">Consultation Mode</label>
+                <div class="chip-grid">
+                  <label class="chip-label">
+                    <input type="radio" name="consultation_mode" value="In-Chambers" checked>
+                    <div class="chip-content">
+                      <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path></svg>
+                      <span>In-Chambers</span>
+                    </div>
+                  </label>
+                  <label class="chip-label">
+                    <input type="radio" name="consultation_mode" value="Video Call">
+                    <div class="chip-content">
+                      <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                      <span>Video Call</span>
+                    </div>
+                  </label>
+                  <label class="chip-label">
+                    <input type="radio" name="consultation_mode" value="Phone Consultation">
+                    <div class="chip-content">
+                      <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                      <span>Phone Call</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Urgency Level (Radio Chips) -->
+              <div class="form-group">
+                <label class="form-label">Urgency Level</label>
+                <div class="chip-grid">
+                  <label class="chip-label">
+                    <input type="radio" name="urgency" value="Routine" checked>
+                    <div class="chip-content">
+                      <span>Routine Advisory</span>
+                    </div>
+                  </label>
+                  <label class="chip-label">
+                    <input type="radio" name="urgency" value="Urgent 24h">
+                    <div class="chip-content" style="border-color: rgba(245, 158, 11, 0.4);">
+                      <span>⚡ Urgent 24h</span>
+                    </div>
+                  </label>
+                  <label class="chip-label urgency-critical">
+                    <input type="radio" name="urgency" value="Critical Court Matter">
+                    <div class="chip-content">
+                      <span>🚨 Critical Court</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Case Details / Brief -->
+              <div class="form-group">
+                <label class="form-label" for="case_details">
+                  Brief Facts / Case Overview
+                </label>
+                <textarea id="case_details" name="case_details" class="form-control" placeholder="Provide relevant facts, ongoing court proceedings, court location, or contractual terms..."></textarea>
+              </div>
+
+              <div class="form-privacy-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Submitted data is processed with end-to-end legal privilege.</span>
+              </div>
+
+              <button type="submit" class="btn btn-gold btn-lg" style="width: 100%;">
+                <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Confirm & Submit Consultation Request</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         SENIOR PARTNERS & ADVOCATE PROFILE SECTION
+         ============================================================================== -->
+    <section class="section" id="partners">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+            <span>Advocate Leadership</span>
+          </div>
+          <h2 class="section-title">Senior Partners & Advocates</h2>
+          <p class="section-desc">
+            Decades of appellate jurisprudence, Bar Council leadership, and international commercial advocacy.
+          </p>
+        </div>
+
+        <div class="partners-grid" id="partnersGrid">
+          <!-- Populated by main.js with Senior Partners -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         CASE RESULTS & TRACK RECORD
+         ============================================================================== -->
+    <section class="section section-darker" id="results">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Verifiable Precedents</span>
+          </div>
+          <h2 class="section-title">Landmark Case Success Stories</h2>
+          <p class="section-desc">
+            Selected courtroom victories, commercial arbitration awards, and precedent-setting judicial outcomes.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <!-- Card 1 -->
+          <div class="result-card">
+            <span class="result-badge">Arbitration Won</span>
+            <div class="result-amount">$3.2 Million</div>
+            <h3 class="result-title">Cross-Border Commercial Dispute</h3>
+            <p class="result-desc">
+              Successfully defended an industrial manufacturing conglomerate against wrongful breach-of-contract claims under LCIA commercial arbitration rules, securing complete dismissal of claims.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="result-card">
+            <span class="result-badge">High Court Bail Confirmed</span>
+            <div class="result-amount">Immediate Release</div>
+            <h3 class="result-title">Pre-Arrest High Court Bail</h3>
+            <p class="result-desc">
+              Drafted overnight urgent emergency bail petition under Section 498 CrPC for senior executive, obtaining protective transit bail before the High Court within less than 12 hours of notice.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="result-card">
+            <span class="result-badge">Constitutional Bench</span>
+            <div class="result-amount">Writ Allowed</div>
+            <h3 class="result-title">Taxation & Regulatory Overreach</h3>
+            <p class="result-desc">
+              Challenged arbitrary statutory surcharge in a landmark Article 199 writ petition before the High Court Division Bench, securing a complete annulment of discriminatory corporate levies.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="result-card">
+            <span class="result-badge">Property Decree</span>
+            <div class="result-amount">Title Protected</div>
+            <h3 class="result-title">Commercial Land Encroachment Eviction</h3>
+            <p class="result-desc">
+              Secured urgent stay orders and definitive trial judgment restoring multi-acre commercial educational parcel to its lawful trust owners against illegal land mafia encroachment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         CLIENT TESTIMONIALS & REVIEWS SECTION
+         ============================================================================== -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Reputation & Trust</span>
+          </div>
+          <h2 class="section-title">Client Reviews & Testimonials</h2>
+          <p class="section-desc">
+            Hear directly from corporate executives, business owners, and families who placed their trust in our courtroom leadership.
+          </p>
+          <div style="margin-top: 1.5rem;">
+            <button class="btn btn-outline-gold btn-sm" onclick="openReviewModal()">
+              <span>Leave a Client Review</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonials-grid" id="testimonialsGrid">
+          <!-- Populated dynamically by main.js from Supabase / LocalStorage -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         LEGAL FAQS ACCORDION
+         ============================================================================== -->
+    <section class="section section-darker" id="faqs">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            <span>Answers & Clarity</span>
+          </div>
+          <h2 class="section-title">Frequently Asked Legal Questions</h2>
+          <p class="section-desc">
+            Clear, transparent answers regarding our consultation procedures, retainership terms, and courtroom representation.
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- Item 1 -->
+          <div class="faq-item active">
+            <button class="faq-question-btn" aria-expanded="true">
+              <span>How do I schedule an emergency consultation for bail or urgent stay orders?</span>
+              <svg class="faq-icon-arrow" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-pane" style="max-height: 250px;">
+              <div class="faq-answer-content">
+                For urgent bail applications or immediate High Court restraining orders, select the <strong>"🚨 Critical Court Matter"</strong> urgency option on our booking form or directly reach our 24/7 emergency chambers hotline at <strong>+92 321 9876543</strong>. Our rapid response legal team will immediately prepare the necessary vakalatnama and draft the urgent petition for same-day bench filing.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>Is my initial case evaluation strictly confidential?</span>
+              <svg class="faq-icon-arrow" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-content">
+                Yes, absolutely. Under Article 9 of the Qanun-e-Shahadat Order, 1984, and the international Legal Practitioners Code of Conduct, any communication between an advocate and a prospective client is protected by strict Attorney-Client Privilege. None of your case facts or documents are disclosed to third parties under any circumstances.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>Can I book a consultation if I reside overseas?</span>
+              <svg class="faq-icon-arrow" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-content">
+                Yes. A significant portion of our corporate and inheritance practice serves overseas clients in the UK, USA, UAE, and Europe. You can choose the <strong>"Video Call"</strong> mode in our booking form. We conduct secure video consultations via Zoom, Google Meet, or Microsoft Teams, and coordinate power of attorney (Special / General POA) attestation through local embassies.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>How does the firm structure legal fee retainers and billing?</span>
+              <svg class="faq-icon-arrow" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-content">
+                We believe in complete billing transparency. Following the initial case evaluation, we provide a formal Retainer Letter outlining the scope of legal work, fixed milestone-based litigation stages, and anticipated court fee out-of-pocket expenses. There are never any hidden costs or surprise surcharges.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>What courts and tribunals does LexAdvocate appear before?</span>
+              <svg class="faq-icon-arrow" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-content">
+                Our advocates regularly appear before the Supreme Court of Pakistan, all High Courts, Senior Civil Courts, Sessions Courts, Special Anti-Corruption Courts, Banking Tribunals, Labor Appellate Tribunals, and National / International Commercial Arbitration forums.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         CHAMBERS LOCATION & QUICK INQUIRY SECTION
+         ============================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Chambers Location & Contact</span>
+          </div>
+          <h2 class="section-title">Visit Our Chambers</h2>
+          <p class="section-desc">
+            Situated within walking distance of the High Court and Judicial Complex for rapid access to registries and benches.
+          </p>
+        </div>
+
+        <div class="chambers-grid">
+          <!-- Left Info Cards -->
+          <div class="chamber-info-cards">
+            <div class="chamber-contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-card-text">
+                <h4>Chambers Address</h4>
+                <p class="dyn-address">Suite 402-405, Executive Legal Tower, Supreme & High Court Avenue, Legal District</p>
+              </div>
+            </div>
+
+            <div class="chamber-contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-card-text">
+                <h4>Chambers Phone & WhatsApp</h4>
+                <p>Advocate Direct: <a href="tel:923337972445" class="dyn-phone">+92 333 7972445</a></p>
+                <p>Emergency Bail (24/7): <a href="tel:923337972445" class="dyn-emergency">+92 333 7972445</a></p>
+              </div>
+            </div>
+
+            <div class="chamber-contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-card-text">
+                <h4>Official Registry Email</h4>
+                <p><a href="mailto:contact@lexadvocate.law" class="dyn-email">contact@lexadvocate.law</a></p>
+                <p style="font-size: 0.8rem; color: #94a3b8;">Average response time: Under 2 business hours</p>
+              </div>
+            </div>
+
+            <div class="chamber-contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="contact-card-text">
+                <h4>Chambers Working Hours</h4>
+                <p class="dyn-hours-weekdays">Monday – Friday: 09:00 AM – 08:00 PM</p>
+                <p class="dyn-hours-saturday">Saturday: 10:00 AM – 04:00 PM (By Appointment)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Quick Inquiry Form -->
+          <div class="inquiry-card">
+            <h3 class="inquiry-card-title">Direct Chamber Inquiry</h3>
+            <p class="inquiry-card-sub">Leave a swift message for our registry desk. We will revert with case guidance.</p>
+
+            <form id="quickInquiryForm">
+              <div class="form-group" style="margin-bottom: 1.1rem;">
+                <label class="form-label" for="inq_name">Your Name <span class="required-star">*</span></label>
+                <input type="text" id="inq_name" class="form-control" placeholder="Full Name" required>
+              </div>
+
+              <div class="form-row" style="margin-bottom: 1.1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="inq_email">Email <span class="required-star">*</span></label>
+                  <input type="email" id="inq_email" class="form-control" placeholder="name@domain.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="inq_phone">Contact Phone</label>
+                  <input type="tel" id="inq_phone" class="form-control" placeholder="+92 300 1234567">
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.1rem;">
+                <label class="form-label" for="inq_subject">Subject</label>
+                <input type="text" id="inq_subject" class="form-control" placeholder="e.g. Corporate Retainership / Supreme Court Appeal">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.4rem;">
+                <label class="form-label" for="inq_message">Message Details <span class="required-star">*</span></label>
+                <textarea id="inq_message" class="form-control" style="min-height: 100px;" placeholder="Brief inquiry message..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width: 100%;">
+                <span>Send Chamber Inquiry</span>
+                <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================================================
+       FOOTER
+       ============================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div>
+          <a href="#home" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-emblem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                <path d="M7 21h10"/>
+                <path d="M12 3v18"/>
+                <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-title dyn-firm-name">LexAdvocate & Associates</span>
+              <span class="logo-subtitle dyn-firm-subtitle">Bukhari Law Chambers</span>
+            </div>
+          </a>
+          <p class="footer-col-desc dyn-tagline">
+            Defending Your Rights with Integrity, Precision & Proven Legal Excellence. Practicing before Supreme Court & High Courts.
+          </p>
+          <div class="bar-affiliations-box">
+            <strong>Bar Certifications:</strong>
+            <p>Supreme Court Bar Association • High Court Bar Association • Lincoln's Inn Legal Alumni Society</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Practice Groups -->
+        <div>
+          <h4 class="footer-title">Practice Areas</h4>
+          <div class="footer-links">
+            <a href="#practices" onclick="openPracticeModal('corporate')">Corporate & Commercial Law</a>
+            <a href="#practices" onclick="openPracticeModal('criminal')">Criminal Defense & High Court Bail</a>
+            <a href="#practices" onclick="openPracticeModal('property')">Property & Real Estate Litigation</a>
+            <a href="#practices" onclick="openPracticeModal('civil')">Civil Litigation & Constitutional Writs</a>
+            <a href="#practices" onclick="openPracticeModal('family')">Family Law & Inheritance Partition</a>
+            <a href="#practices" onclick="openPracticeModal('cyber')">Cyber Crime & PECA Defense</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Navigation -->
+        <div>
+          <h4 class="footer-title">Chambers Navigation</h4>
+          <div class="footer-links">
+            <a href="#about">About Our Advocates</a>
+            <a href="#partners">Senior Partners</a>
+            <a href="#results">Case Results & Precedents</a>
+            <a href="#booking">Book Free Case Evaluation</a>
+            <a href="#testimonials">Client Testimonials</a>
+            <a href="#faqs">Legal FAQs</a>
+            <a href="admin.html">Advocate CRM Portal</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Hours -->
+        <div>
+          <h4 class="footer-title">Chamber Hours</h4>
+          <div class="footer-links">
+            <p style="font-size: 0.9rem; color: #cbd5e1;"><strong class="text-gold">Weekdays:</strong> 09:00 AM – 08:00 PM</p>
+            <p style="font-size: 0.9rem; color: #cbd5e1;"><strong class="text-gold">Saturday:</strong> 10:00 AM – 04:00 PM</p>
+            <p style="font-size: 0.9rem; color: #cbd5e1;"><strong class="text-gold">Sunday:</strong> Closed (Emergency Bail Active)</p>
+            <div style="margin-top: 1rem;">
+              <a href="#booking" class="btn btn-gold btn-sm" style="width: 100%;">
+                <span>Book Legal Appointment</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Compliance Disclaimer Bar -->
+      <div class="footer-disclaimer-bar">
+        <strong>LEGAL DISCLAIMER & COMPLIANCE:</strong> The information provided on this website is for general informational purposes only and does not constitute formal legal advice or an attorney-client relationship until a formal vakalatnama or engagement agreement is executed with the chambers. Prior case results do not guarantee similar outcomes. All consultations comply with Bar Council regulations and Attorney-Client Privilege statutes.
+      </div>
+
+      <div class="footer-bottom-row">
+        <p class="copyright-text">
+          &copy; <span id="currentYear">2026</span> <span class="dyn-firm-name">LexAdvocate & Associates</span>. All Rights Reserved. Built with HTML5, CSS3, Vanilla JS & Supabase PostgreSQL.
+        </p>
+        <div style="display: flex; gap: 1.5rem; font-size: 0.82rem; color: #64748b;">
+          <a href="#booking">Confidentiality Policy</a>
+          <span>•</span>
+          <a href="#booking">Chambers Retainer Terms</a>
+          <span>•</span>
+          <a href="admin.html" class="text-gold">Advocate Admin Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================================================================
+       FLOATING ACTIONS (WhatsApp, Call, Top)
+       ============================================================================== -->
+  <div class="floating-actions-container">
+    <!-- Back to top -->
+    <button class="btn-floating-top" id="btnBackToTop" title="Back to top" aria-label="Back to top">
+      <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Quick Call Button -->
+    <a href="tel:923337972445" class="btn-floating-call dyn-phone" title="Call Advocate Imran IB Abro" aria-label="Call Advocates">
+      <svg style="width: 22px; height: 22px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </a>
+
+    <!-- Direct WhatsApp Float with pulse -->
+    <a href="#" target="_blank" class="btn-floating-wa dyn-wa-link" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
+      </svg>
+      <span>Instant WhatsApp Counsel</span>
+    </a>
+  </div>
+
+  <!-- ==============================================================================
+       MODALS: PRACTICE AREA DETAILS
+       ============================================================================== -->
+  <div class="modal-overlay" id="practiceDetailModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('practiceDetailModal')" aria-label="Close modal">
+        <svg style="width: 22px; height: 22px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="section-tag" style="margin-bottom: 0.75rem;">Specialized Legal Group</div>
+      <h3 id="modalPracticeTitle" style="font-size: 1.6rem; margin-bottom: 1rem; color: #ffffff;">Practice Area</h3>
+      <p id="modalPracticeDesc" style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.65; margin-bottom: 1.5rem;">Description</p>
+
+      <h4 style="font-size: 1.05rem; color: var(--gold-light); margin-bottom: 1rem;">Scope of Legal Advisory & Court Services:</h4>
+      <ul id="modalPracticeServices" style="margin-bottom: 2rem;">
+        <!-- Services list inserted dynamically -->
+      </ul>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button id="modalPracticeBookBtn" class="btn btn-gold btn-sm" style="flex: 1;">
+          <span>Book Consultation for this Matter</span>
+        </button>
+        <button class="btn btn-outline-gold btn-sm" onclick="closeModal('practiceDetailModal')">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================================================
+       MODALS: CONSULTATION BOOKING CONFIRMATION & 1-CLICK WHATSAPP LINK
+       ============================================================================== -->
+  <div class="modal-overlay" id="bookingSuccessModal">
+    <div class="modal-card" style="text-align: center;">
+      <button class="modal-close-btn" onclick="closeModal('bookingSuccessModal')" aria-label="Close modal">
+        <svg style="width: 22px; height: 22px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-success-icon">
+        <svg style="width: 38px; height: 38px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+
+      <h3 style="font-size: 1.65rem; color: #ffffff; margin-bottom: 0.5rem;">Consultation Logged</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Your legal consultation request has been secured in our chamber records.
+      </p>
+
+      <div style="background: rgba(7, 11, 25, 0.6); border: 1px solid var(--gold-border); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; margin-bottom: 1.75rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Case Reference:</span>
+          <strong id="successRefCode" style="color: var(--gold-light);">#LEX-0000</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Client / Entity:</span>
+          <strong id="successClientName" style="color: #ffffff;">Client Name</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Discipline:</span>
+          <strong id="successPractice" style="color: #ffffff;">Corporate Law</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Requested Slot:</span>
+          <strong id="successSlot" style="color: #ffffff;">Date & Slot</strong>
+        </div>
+      </div>
+
+      <!-- 1-Click WhatsApp Booking Confirmation Link -->
+      <a id="successWhatsAppBtn" href="#" target="_blank" class="btn btn-gold" style="width: 100%; margin-bottom: 0.85rem; background: #25d366; color: #ffffff; border-color: #25d366;">
+        <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
+        </svg>
+        <span>Send 1-Click WhatsApp Confirmation</span>
+      </a>
+
+      <button class="btn btn-outline-gold btn-sm" onclick="closeModal('bookingSuccessModal')" style="width: 100%;">
+        <span>Close Window</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==============================================================================
+       MODALS: SUBMIT CLIENT REVIEW
+       ============================================================================== -->
+  <div class="modal-overlay" id="submitReviewModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('submitReviewModal')" aria-label="Close modal">
+        <svg style="width: 22px; height: 22px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="section-tag" style="margin-bottom: 0.75rem;">Client Feedback</div>
+      <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 0.4rem;">Submit a Case Review</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Your feedback helps prospective clients understand the caliber of our courtroom representation.
+      </p>
+
+      <form id="clientReviewForm" onsubmit="handleReviewSubmit(event)">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label class="form-label" for="rev_name">Your Name <span class="required-star">*</span></label>
+          <input type="text" id="rev_name" class="form-control" placeholder="e.g. M. Tariq / Industrialist" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label class="form-label" for="rev_company">Company / Designation (Optional)</label>
+          <input type="text" id="rev_company" class="form-control" placeholder="e.g. Director, Atlas Enterprises">
+        </div>
+
+        <div class="form-row" style="margin-bottom: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="rev_practice">Practice Area</label>
+            <select id="rev_practice" class="form-control">
+              <option value="Corporate & Commercial Law">Corporate & Commercial Law</option>
+              <option value="Criminal Defense & Bail Matters">Criminal Defense & Bail Matters</option>
+              <option value="Property & Real Estate Litigation">Property & Real Estate Litigation</option>
+              <option value="Civil Litigation & Constitutional Writs">Civil Litigation & Constitutional Writs</option>
+              <option value="Family & Matrimonial Law">Family & Matrimonial Law</option>
+              <option value="Cyber Crime & Digital Law">Cyber Crime & Digital Law</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rev_rating">Rating</label>
+            <select id="rev_rating" class="form-control">
+              <option value="5">★★★★★ (5 Stars - Exceptional)</option>
+              <option value="4">★★★★☆ (4 Stars - Highly Satisfied)</option>
+              <option value="3">★★★☆☆ (3 Stars - Satisfied)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label class="form-label" for="rev_outcome">Case Outcome Summary</label>
+          <input type="text" id="rev_outcome" class="form-control" placeholder="e.g. Injunction Granted / Bail Confirmed">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label class="form-label" for="rev_text">Your Review Remarks <span class="required-star">*</span></label>
+          <textarea id="rev_text" class="form-control" style="min-height: 100px;" placeholder="Describe your experience with our legal team..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%;">
+          <span>Submit Review for Verification</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Set dynamic current year in footer
+    const yr = document.getElementById("currentYear");
+    if (yr) yr.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

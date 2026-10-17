@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advocate CRM & Case Portal | LexAdvocate & Associates</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Scales of Justice Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a059' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='M7 21h10'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'/%3E%3C/svg%3E">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="css/admin.css">
+
+  <!-- Supabase CDN (v2) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+
+  <!-- ==============================================================================
+       1. PASSCODE LOGIN LOCKSCREEN (Passcode: lawyer123)
+       ============================================================================== -->
+  <div class="login-screen-wrapper" id="loginWrapper">
+    <div class="login-card">
+      <div class="login-crest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+
+      <h1 class="login-title">Advocate Portal Access</h1>
+      <p class="login-subtitle">LexAdvocate & Associates (Bukhari Law Chambers)</p>
+
+      <form class="login-form" id="adminLoginForm">
+        <div class="login-input-group">
+          <label class="login-label" for="adminPasscode">Chambers Security Passcode</label>
+          <input type="password" id="adminPasscode" class="login-input" placeholder="Enter Passcode (e.g. lawyer123)" required autofocus>
+        </div>
+
+        <button type="submit" class="btn-login">
+          <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Unlock Chambers Dashboard</span>
+        </button>
+      </form>
+
+      <div class="login-hint-box">
+        <strong>Default Passcode:</strong> <code style="color: var(--admin-gold-light); font-weight: bold;">lawyer123</code>
+        <div style="margin-top: 0.35rem; font-size: 0.72rem; color: #94a3b8;">
+          Configurable in <code>js/config.js</code> under <code>admin.defaultPasscode</code>.
+        </div>
+      </div>
+
+      <a href="index.html" class="login-back-link">← Return to Public Website</a>
+    </div>
+  </div>
+
+  <!-- ==============================================================================
+       2. AUTHENTICATED ADMIN DASHBOARD / CASE MANAGEMENT CRM
+       ============================================================================== -->
+  <div class="admin-wrapper" id="adminWrapper" style="display: none;">
+    
+    <!-- Top Navigation Header -->
+    <header class="admin-navbar">
+      <div class="admin-nav-inner">
+        <div class="admin-brand">
+          <div class="admin-brand-icon">
+            <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="M7 21h10"/>
+              <path d="M12 3v18"/>
+            </svg>
+          </div>
+          <div class="admin-brand-text">
+            <h2>LexAdvocate Chambers CRM</h2>
+            <p>Advocate & Senior Partners Control Center</p>
+          </div>
+        </div>
+
+        <div class="admin-nav-right">
+          <!-- Connection Status Pill -->
+          <div id="connectionStatusPill" class="connection-status-pill status-local" title="Checking database status...">
+            <span class="status-dot"></span>
+            <span>Checking Database...</span>
+          </div>
+
+          <!-- Supabase Settings Button -->
+          <button id="btnOpenSettings" class="btn-nav-action" title="Configure Live Supabase API">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            <span>Supabase Setup</span>
+          </button>
+
+          <!-- Return to Client Site -->
+          <a href="index.html" class="btn-nav-action" target="_blank" title="Open Client Portal in New Tab">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>View Website</span>
+          </a>
+
+          <!-- Logout Button -->
+          <button id="btnLogout" class="btn-nav-action btn-nav-logout" title="Lock Chambers Portal">
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span>Lock Portal</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main CRM Content -->
+    <main class="admin-main">
+      
+      <!-- Real-Time KPI Cards Strip -->
+      <section class="kpi-grid" aria-label="Key Performance Indicators">
+        <!-- KPI 1: Total Consultations -->
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <h3>Total Bookings</h3>
+            <div class="kpi-val" id="kpiTotal">0</div>
+          </div>
+          <div class="kpi-icon kpi-icon-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- KPI 2: Pending New Requests -->
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <h3>New Requests</h3>
+            <div class="kpi-val" id="kpiNew" style="color: #60a5fa;">0</div>
+          </div>
+          <div class="kpi-icon kpi-icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- KPI 3: Scheduled Consultations -->
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <h3>Scheduled</h3>
+            <div class="kpi-val" id="kpiScheduled" style="color: #a78bfa;">0</div>
+          </div>
+          <div class="kpi-icon" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+        </div>
+
+        <!-- KPI 4: Urgent & Critical Court Matters -->
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <h3>Critical Court</h3>
+            <div class="kpi-val" id="kpiCritical" style="color: #f87171;">0</div>
+          </div>
+          <div class="kpi-icon kpi-icon-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- CRM Navigation Tabs -->
+      <nav class="crm-tab-nav" aria-label="Portal Modules">
+        <button class="tab-btn active" data-tab="tabConsultations">
+          <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+          </svg>
+          <span>Consultation Requests</span>
+          <span class="tab-badge" id="consultationTabBadge">0</span>
+        </button>
+
+        <button class="tab-btn" data-tab="tabInquiries">
+          <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Quick Contact Inquiries</span>
+          <span class="tab-badge" id="inquiryTabBadge">0</span>
+        </button>
+      </nav>
+
+      <!-- TAB 1: CONSULTATIONS CRM -->
+      <div class="tab-pane" id="tabConsultations">
+        
+        <!-- Toolbar & Filter Controls -->
+        <div class="crm-toolbar">
+          <div class="toolbar-left">
+            <!-- Search Box -->
+            <div class="search-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="tableSearch" class="search-input" placeholder="Search client, phone, or practice area...">
+            </div>
+
+            <!-- Status Filter -->
+            <select id="statusFilter" class="filter-select">
+              <option value="all">All Statuses</option>
+              <option value="New">Status: New</option>
+              <option value="Scheduled">Status: Scheduled</option>
+              <option value="Completed">Status: Completed</option>
+              <option value="Archived">Status: Archived</option>
+            </select>
+
+            <!-- Urgency Filter -->
+            <select id="urgencyFilter" class="filter-select">
+              <option value="all">All Urgency</option>
+              <option value="Critical Court Matter">Critical Court Matter</option>
+              <option value="Urgent 24h">Urgent 24h</option>
+              <option value="Routine">Routine</option>
+            </select>
+          </div>
+
+          <div class="toolbar-right">
+            <!-- Export CSV -->
+            <button class="btn-nav-action" onclick="exportConsultationsToCSV()" title="Export all bookings to CSV spreadsheet">
+              <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Export CSV</span>
+            </button>
+
+            <!-- Refresh Button -->
+            <button class="btn-nav-action" onclick="loadDashboardData()" title="Reload data from database">
+              <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+              <span>Refresh</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="table-responsive">
+          <table class="crm-table">
+            <thead>
+              <tr>
+                <th>Client Name & Contact</th>
+                <th>Practice Discipline</th>
+                <th>Mode</th>
+                <th>Requested Slot</th>
+                <th>Urgency</th>
+                <th>Status Pipeline</th>
+                <th style="text-align: right;">1-Click Actions</th>
+              </tr>
+            </thead>
+            <tbody id="consultationsTableBody">
+              <!-- Rendered dynamically by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 2: INQUIRIES CRM -->
+      <div class="tab-pane" id="tabInquiries" style="display: none;">
+        <div class="table-responsive">
+          <table class="crm-table">
+            <thead>
+              <tr>
+                <th>Visitor Name & Email</th>
+                <th>Subject</th>
+                <th>Inquiry Message</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="inquiriesTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ==============================================================================
+       MODALS: CASE DETAILS & ADMIN NOTES
+       ============================================================================== -->
+  <div class="admin-modal-overlay" id="caseBriefModal">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3>Client Case Assessment Brief</h3>
+        <button class="modal-close-cross" onclick="closeAdminModal('caseBriefModal')">&times;</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+        <div class="detail-row">
+          <div class="detail-label">Client Name</div>
+          <div class="detail-val" id="modalCaseClient">-</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Contact Phone / WhatsApp</div>
+          <div class="detail-val" id="modalCasePhone">-</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Email</div>
+          <div class="detail-val" id="modalCaseEmail">-</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Practice Area</div>
+          <div class="detail-val" style="color: var(--admin-gold-light);" id="modalCasePractice">-</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Consultation Mode</div>
+          <div class="detail-val" id="modalCaseMode">-</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Urgency Level</div>
+          <div class="detail-val" id="modalCaseUrgency">-</div>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Preferred Appointment Slot</div>
+        <div class="detail-val" id="modalCaseSlot">-</div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Submitted Case Facts / Brief</div>
+        <div class="detail-case-brief" id="modalCaseBriefText">
+          -
+        </div>
+      </div>
+
+      <!-- Internal Admin Notes Field -->
+      <div class="detail-row">
+        <div class="detail-label">Internal Chambers Notes & Assigned Counsel</div>
+        <textarea id="modalAdminNotes" class="login-input" style="min-height: 80px;" placeholder="Add internal counsel notes, assigned advocate, hearing court, or retainer quote..."></textarea>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem;">
+        <button class="btn-nav-action" onclick="closeAdminModal('caseBriefModal')">Close</button>
+        <button class="btn-login" id="modalSaveNotesBtn" style="padding: 0.55rem 1.25rem;">Save Chambers Notes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================================================
+       MODALS: SUPABASE CONNECTION SETTINGS
+       ============================================================================== -->
+  <div class="admin-modal-overlay" id="supabaseSettingsModal">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3>Supabase PostgreSQL Live Connection</h3>
+        <button class="modal-close-cross" onclick="closeAdminModal('supabaseSettingsModal')">&times;</button>
+      </div>
+
+      <p style="font-size: 0.88rem; color: var(--admin-text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+        Connect your static GitHub Pages site directly to a free Supabase cloud database. Credentials are saved locally in your browser so you never need to commit sensitive keys to git.
+      </p>
+
+      <div class="login-input-group" style="margin-bottom: 1.2rem;">
+        <label class="login-label" for="settingsSupabaseUrl">Supabase Project URL</label>
+        <input type="url" id="settingsSupabaseUrl" class="login-input" placeholder="https://your-project.supabase.co">
+      </div>
+
+      <div class="login-input-group" style="margin-bottom: 1.5rem;">
+        <label class="login-label" for="settingsSupabaseKey">Supabase Anon Public API Key</label>
+        <input type="password" id="settingsSupabaseKey" class="login-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
+      </div>
+
+      <div id="settingsStatusMsg" style="font-size: 0.85rem; margin-bottom: 1.25rem; min-height: 20px;"></div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <button class="btn-nav-action" id="btnTestSupabase">
+          <span>Test Live Connection</span>
+        </button>
+        <button class="btn-login" id="btnSaveSupabase" style="padding: 0.55rem 1.25rem;">
+          <span>Save & Connect</span>
+        </button>
+        <button class="btn-nav-action btn-nav-logout" id="btnClearSupabase" title="Reset to browser local storage mode">
+          <span>Reset to LocalStorage</span>
+        </button>
+      </div>
+
+      <div class="login-hint-box" style="margin-top: 1.75rem;">
+        <strong>Quick Supabase Setup:</strong>
+        <ol style="margin-left: 1.25rem; margin-top: 0.4rem; font-size: 0.8rem; line-height: 1.6; color: #cbd5e1;">
+          <li>Create a free project at <a href="https://supabase.com" target="_blank" style="color: var(--admin-gold-light);">supabase.com</a>.</li>
+          <li>Copy the contents of <code>supabase-schema.sql</code> into your Supabase SQL Editor and click "Run".</li>
+          <li>Copy your Project URL and <code>anon public</code> API Key into the fields above and click Save.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
